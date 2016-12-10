@@ -16,6 +16,8 @@ int main ()
 	std::cout << "D" << std::endl;
 	std::cout << "!" << std::endl;
 	
+	std::cout << "CPEDSTRUCT" << std::endl;
+	
 	
 	return 0;
 }
