@@ -1,3 +1,4 @@
+#include <conio.h>
 #include <iostream>
 using namespace std;
 
@@ -19,7 +20,21 @@ public:
                                
         head = n;              
     }
-
+    
+    void printList(){
+    	Node *p = head;
+    	Node *q = head;
+    	
+    	while (q)
+    	{
+    		p=q;
+    		cout << p->x << endl;
+    		q = p-> next;
+		}
+	}
+	
+	
+	
     int popValue(){
         Node *n = head;
         int ret = n->x;
@@ -43,7 +58,10 @@ int main() {
 	cout << "(1) Insert into liked list" << endl;
 	cout << "(2) Pop" << endl;
 	cout << "(3) Exit" << endl;
-	cin  >> choice ; 
+	cout << "(4) Print out Linked List" << endl;
+	cin >> choice;
+	
+	
 	switch(choice)
 	{
 		case 1 : cout << "What number would you like to add?" << endl;
@@ -54,6 +72,12 @@ int main() {
 		system("pause");
 				 break;
 		case 3 : exit(1);
+		break;
+		case 4 : list.printList();
+		cout << endl;
+		system("pause");
+		break;
+		
 		default : cout << "Invalid Input Please try again!" << endl;
 				  system("pause");
 				break;
