@@ -66,9 +66,8 @@ int main() {
 	cout << "What would you like to do?" << endl;
 	cout << "(1) Push" << endl;
 	cout << "(2) Pop" << endl;
-	cout << "(3) Exit" << endl;
-	cout << "(4) Print out Linked List (Stack)" << endl;
-	cout << "(5) Exit" << endl;
+	cout << "(3) Print out Linked List (Stack)" << endl;
+	cout << "(4) Exit" << endl;
 	cin >> choice;
 	
 	
@@ -81,15 +80,14 @@ int main() {
 		case 2 :  list.popValue() ;
 		system("pause");
 				 break;
-		case 3 : exit(1);
+		case 4 : exit(1);
 		break;
-		case 4 : list.printList();
+		case 3 : list.printList();
 		cout << endl;
 		system("pause");
 		break;
 		
-		case 5 : exit(1);
-		break;
+	
 		default : cout << "Invalid Input Please try again!" << endl;
 				  system("pause");
 				break;
