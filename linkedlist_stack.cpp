@@ -89,7 +89,7 @@ int main() {
 		break;
 		
 		case 5 : exit(1);
-		
+		break;
 		default : cout << "Invalid Input Please try again!" << endl;
 				  system("pause");
 				break;
