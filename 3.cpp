@@ -7,18 +7,7 @@ struct Tree
 	Tree *right;  
 	Tree *parent;  
 };
-Tree* lookUp(struct Tree *node, char key)
-{
-	if(node == NULL) return node;
 
-	if(node->data == key) return node;
-	else {
-	    if(node->data < key)
-		return lookUp(node->right, key) ;
-	    else
-		return lookUp(node->left, key);
-	}
-}
 struct Tree *newTreeNode(int data) 
 {
 	Tree *node = new Tree;
@@ -49,49 +38,6 @@ struct Tree* insertTreeNode(struct Tree *node, int data)
 	} 
 	return node;
 }
-Tree* minTree(struct Tree *node)
-{
-	if(node == NULL) return NULL;
-	while(node->left) 
-	    node = node -> left;
-	return node;
-}
-
-
-Tree* maxTree(struct Tree *node)
-{
-	while(node->right) 
-	    node = node -> right;
-	return node;
-}
-
-Tree *succesorInOrder(struct Tree *node)
-{
-
-	if(node->right != NULL) return minTree(node->right);
-
-	Tree *y = node->parent;
-	while(y != NULL && node == y->right) {
-	    node = y;
-	    y = y->parent;
-	}
-	return y;
-}
-
-
-Tree *predecessorInOrder(struct Tree *node)
-{
-
-	if(node->left != NULL) return maxTree(node->left);
-
-	Tree *y = node->parent;
-	while(y != NULL && node == y->left) {
-	    node = y;
-	    y = y->parent;
-	}
-	return y;
-}
-
 void printTreeInOrder(struct Tree *node)
 {
 	if(node == NULL) return;
@@ -127,71 +73,7 @@ int main(int argc, char **argv)
 	insertTreeNode(root,'I');
 	insertTreeNode(root,'H');
 
-	ch = 'B';
-	found = lookUp(root,ch);
-	if(found) {
-	    succ = succesorInOrder(found);
-	    if(succ)
-		cout << "In Order Successor of " << ch << " is "
-		     << succesorInOrder(found)->data << endl;
-	    else 
-		cout << "In Order Successor of " << ch << " is None\n";
-	}
 
-	ch = 'E';
-	found = lookUp(root,ch);
-	if(found) {
-	    succ = succesorInOrder(found);
-	    if(succ)
-		cout << "In Order Successor of " << ch << " is "
-			 << succesorInOrder(found)->data << endl;
-	    else 
-		cout << "In Order Successor of " << ch << " is None\n";
-	}
-
-	ch = 'I';
-	found = lookUp(root,ch);
-	if(found) {
-	    succ = succesorInOrder(found);
-	    if(succ)
-		cout << "In Order Successor of " << ch << " is "
-			 << succesorInOrder(found)->data << endl;
-	    else 
-		cout << "In Order Successor of " << ch << " is None\n";
-	}
-
-	ch = 'B';
-	found = lookUp(root,ch);
-	if(found) {
-	    pred = predecessorInOrder(found);
-	    if(pred)
-		cout << "In Order Predecessor of " << ch << " is "
-			 << predecessorInOrder(found)->data << endl;
-	    else 
-		cout << "In Order Predecessor of " << ch << " is None\n";
-	}
-
-	ch = 'E';
-	found = lookUp(root,ch);
-	if(found) {
-	    pred = predecessorInOrder(found);
-	    if(pred)
-		cout << "In Order Predecessor of " << ch << " is "
-			 << predecessorInOrder(found)->data << endl;
-	    else 
-		cout << "In Order Predecessor of " << ch << " is None\n";
-	}
-
-	ch = 'I';
-	found = lookUp(root,ch);
-	if(found) {
-	    pred = predecessorInOrder(found);
-	    if(pred)
-		cout << "In Order Predecessor of " << ch << " is "
-			 << predecessorInOrder(found)->data << endl;
-	    else 
-		cout << "In Order Predecessor of " << ch << " is None\n";
-	}
 
 	cout << "increasing sort order\n";
 	printTreeInOrder(root);
