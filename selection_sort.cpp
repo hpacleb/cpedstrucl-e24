@@ -12,12 +12,12 @@ int main (){
 		cout << "Enter value of Array " << i+1 <<  ": ";
 		cin >> a[i];
 	}
-	cout << "Original array " << endl;
+	cout << "Original array : ";
 	for(i=0;i<n;i++){
-		cout << a[i] << endl;
+		cout << a[i] << " " ;
 	}
+	cout << endl;
 	for(i=0;i<n-1;i++){	
-		cout << "Selection Sort Pass #" << pass << endl;
 		int min=a[i] , index=i;
 		for(int j=i+1;j<n;j++){	
 			if(a[j] < min){
@@ -28,10 +28,11 @@ int main (){
 		}
 	a[index]= a[i];
 	a[i] = min;
-	cout << "Sorted Array in Pass #" << pass << endl;
+	cout << "Sorted Array in Pass #" <<  pass << " : " ;
 	for(x=0;x<n;x++){
-		cout <<a[x] << endl;
+		cout <<a[x] << " " ;
 	}
+	cout << endl;
 	pass++;
 	}
 	return 0;
