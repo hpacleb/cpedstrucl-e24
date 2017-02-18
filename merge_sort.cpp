@@ -9,13 +9,12 @@ int main (){
 	int size;
 	int a[] = { 10 , 12 , 2 , 3 ,5 , 6, 8, 11};
 	int temp[8]; 
-	cout << "Original Array " << endl;
+	cout << "Original Array " << " : " ;
 	for(x=0;x<n;x++){
-		cout << a[x] << endl;
+		cout << a[x] << " " ;
 	}
 	for(size=1;size<n;size=size*2){
 		cout << endl;
-		cout << "Merge sort Pass #" << pass << endl;
 		l1=0;
 		k=0;
 		while(l1+size<n){
@@ -49,9 +48,9 @@ int main (){
 			a[i]=temp[i];
 
 		}
-		cout << "Sorted Array in Pass #" << pass << endl;
+		cout << "Sorted Array in Pass #" << pass << " : " ;
 		for(x=0;x<n;x++)
-		cout << a[x] << endl;
+		cout << a[x] << " ";
 		pass++;
 	}
 	
