@@ -16,24 +16,24 @@ int main (){
 	}
 	
 	
-	cout << "Original array " << endl;
+	cout << "Original array : " ;
 	for(i=0;i<n;i++){
-		cout << a[i] << endl;
+		cout << a[i]<< " " ;
 	}
 	
-	
+	cout << endl;
 	for(i=1;i<n;i++){
-	cout << "Insertion Sort Pass #" << pass << endl;
 	temp=a[i];
 		for(j=i-1;j>=0 && temp<a[j];j--){
 			cout << "Swapped " << a[j+1] << " and " << a[j] << endl;
 			a[j+1] = a[j];
 		}
 	a[j+1] = temp;
-	cout << "Sorted Array in Pass #" << pass << endl;
+	cout << "Sorted Array in Pass #" << pass << " : ";
 		for(x=0;x<n;x++){
-			cout <<a[x] << endl;
+			cout <<a[x] << " " ;
 		}
+		cout << endl;
 	pass++;
 }
 
