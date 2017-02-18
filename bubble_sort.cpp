@@ -12,12 +12,12 @@ int main (){
 		cout << "Enter value of Array " << i+1 <<  ": ";
 		cin >> a[i];
 	}
-	cout << "Original array " << endl;
+	cout << "Original array : " ; 
 	for(i=0;i<n;i++){
-		cout << a[i] << endl;
+		cout << a[i] << " " ;
 	}
+	cout << endl;
 	for(i=n;i>1;i--){
-		cout << "Bubble Sort Pass #" << pass << endl;
 		for(j=0;j<i-1;j++){
 			if(a[j]>a[j+1]){
 				cout << "Swapped " << a[j] << " and " << a[j+1] << endl;
@@ -27,10 +27,11 @@ int main (){
 			
 			}
 		}	
-	cout << "Sorted Array in Pass #" << pass << endl;
+	cout << "Sorted Array in Pass #" << pass << " : " ;
 	for(x=0;x<n;x++){
-		cout <<a[x] << endl;
+		cout <<a[x] << " ";
 	}
+	cout << endl;
 	pass ++;
 	}
 	return 0;
