@@ -4,7 +4,6 @@ using namespace std;
 void shell_sort (int *a, int n){
 	int h,i,j,k,pass=1,x;
 	for(h=n;h /= 2;){
-		cout << "Shell Sort Pass #" << pass << endl;
 		for(i=h;i<n;i++){
 			k = a[i];
 			for(j=i;(j>=h) && k < (a[j-h]);j-=h){
@@ -13,10 +12,12 @@ void shell_sort (int *a, int n){
 			}
 			a[j]=k;
 		}
-		cout <<"Sorted Array in Pass #" << pass << endl;
+		cout << endl;
+		cout <<"Sorted Array in Pass #" << pass << " : " ;
 		for(x=0;x<n;x++){
-			cout <<a[x] << endl;
+			cout << a[x] << " "  ;
 		}
+		cout << endl;
 		pass++; 
 	}
 
@@ -29,8 +30,9 @@ int main (int ac, char **av){
 	int n = sizeof a / sizeof a[0];
 	cout <<"Original Array " << endl;
 		for(x=0;x<n;x++){
-			cout <<a[x] << endl;
+			cout <<a[x] << " " ;
 		}
+		cout << endl;
 	cout << endl;
 	shell_sort(a,n);
 	return 0;
